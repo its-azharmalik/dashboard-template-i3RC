@@ -1,28 +1,28 @@
-import React, { useCallback, useRef } from 'react';
-import { register } from '../../actions/userActions';
-import { useDispatch } from 'react-redux';
-import '../loginPage/loginPage.css';
-import { userRegisterReducer } from '../../reducers/userReducers';
+import React, { useCallback, useRef } from "react"
+import { register } from "../../actions/userActions"
+import { useDispatch } from "react-redux"
+import "../loginPage/loginPage.css"
+import { userRegisterReducer } from "../../reducers/userReducers"
 
 const CreateUser = ({ cancelHandeler }) => {
   // refs
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const confirmPasswordRef = useRef();
-  const authTypeRef = useRef();
+  const nameRef = useRef()
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const confirmPasswordRef = useRef()
+  const authTypeRef = useRef()
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // onsubmit
   const submitHandler = useCallback((e) => {
     // e.preventDefault(); // dhyan rakhein iska ..... Ispr aur bat krni h
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    const authType = authTypeRef.current.value;
-    dispatch(register(name, email, password, authType));
-  }, []);
+    const name = nameRef.current.value
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+    const authType = authTypeRef.current.value
+    dispatch(register(name, email, password, authType))
+  }, [])
 
   return (
     <div className="create-form-container">
@@ -30,30 +30,15 @@ const CreateUser = ({ cancelHandeler }) => {
         <div className="logo">I3RC Poll User Register</div>
         <div className="input-field">
           <label htmlFor="">Name</label>
-          <input
-            type="text"
-            placeholder="Enter your Name"
-            ref={nameRef}
-            required
-          />
+          <input type="text" placeholder="Enter your Name" ref={nameRef} required />
         </div>
         <div className="input-field">
           <label htmlFor="">Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            ref={emailRef}
-            required
-          />
+          <input type="email" placeholder="Enter your email" ref={emailRef} required />
         </div>
         <div className="input-field">
           <label htmlFor="">Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            ref={passwordRef}
-            required
-          />
+          <input type="password" placeholder="Enter your password" ref={passwordRef} required />
         </div>
         <div className="input-field">
           <label htmlFor="">Confirm Password</label>
@@ -81,7 +66,7 @@ const CreateUser = ({ cancelHandeler }) => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default CreateUser;
+export default CreateUser

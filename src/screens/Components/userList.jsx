@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import './userList.css';
+import React, { useEffect, useState } from "react"
+import "./userList.css"
 
 function UserList({ users }) {
-  const [userList, setUserList] = useState(users);
+  const [userList, setUserList] = useState(users)
   useEffect(() => {
-    setUserList(users);
-  }, [userList]);
+    setUserList(users)
+  }, [userList])
   return (
     <div className="table-container">
       <table>
@@ -28,7 +28,7 @@ function UserList({ users }) {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 
-export default UserList;
+export default UserList

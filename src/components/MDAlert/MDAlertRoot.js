@@ -14,22 +14,22 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box"
+import { styled } from "@mui/material/styles"
 
 export default styled(Box)(({ theme, ownerState }) => {
-  const { palette, typography, borders, functions } = theme;
-  const { color } = ownerState;
+  const { palette, typography, borders, functions } = theme
+  const { color } = ownerState
 
-  const { white, gradients } = palette;
-  const { fontSizeRegular, fontWeightMedium } = typography;
-  const { borderRadius } = borders;
-  const { pxToRem, linearGradient } = functions;
+  const { white, gradients } = palette
+  const { fontSizeRegular, fontWeightMedium } = typography
+  const { borderRadius } = borders
+  const { pxToRem, linearGradient } = functions
 
   // backgroundImage value
   const backgroundImageValue = gradients[color]
     ? linearGradient(gradients[color].main, gradients[color].state)
-    : linearGradient(gradients.info.main, gradients.info.state);
+    : linearGradient(gradients.info.main, gradients.info.state)
 
   return {
     display: "flex",
@@ -44,5 +44,5 @@ export default styled(Box)(({ theme, ownerState }) => {
     borderRadius: borderRadius.md,
     fontSize: fontSizeRegular,
     fontWeight: fontWeightMedium,
-  };
-});
+  }
+})

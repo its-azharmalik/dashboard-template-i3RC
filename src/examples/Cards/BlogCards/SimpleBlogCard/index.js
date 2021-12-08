@@ -14,19 +14,19 @@ Coded by www.creative-tim.com
 */
 
 // react-router components
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @mui material components
-import Card from "@mui/material/Card";
-import MuiLink from "@mui/material/Link";
+import Card from "@mui/material/Card"
+import MuiLink from "@mui/material/Link"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
+import MDBox from "components/MDBox"
+import MDTypography from "components/MDTypography"
+import MDButton from "components/MDButton"
 
 function SimpleBlogCard({ image, title, description, action }) {
   return (
@@ -79,7 +79,7 @@ function SimpleBlogCard({ image, title, description, action }) {
         )}
       </MDBox>
     </Card>
-  );
+  )
 }
 
 // Typechecking props for the SimpleBlogCard
@@ -103,6 +103,6 @@ SimpleBlogCard.propTypes = {
     ]),
     label: PropTypes.string.isRequired,
   }).isRequired,
-};
+}
 
-export default SimpleBlogCard;
+export default SimpleBlogCard

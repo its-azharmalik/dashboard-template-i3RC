@@ -14,14 +14,14 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import { styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles"
 
 export default styled("span")(({ theme }) => {
-  const { palette, typography, functions } = theme;
+  const { palette, typography, functions } = theme
 
-  const { white } = palette;
-  const { size, fontWeightMedium } = typography;
-  const { pxToRem } = functions;
+  const { white } = palette
+  const { size, fontWeightMedium } = typography
+  const { pxToRem } = functions
 
   return {
     color: white.main,
@@ -31,5 +31,5 @@ export default styled("span")(({ theme }) => {
     fontWeight: fontWeightMedium,
     cursor: "pointer",
     lineHeight: 0,
-  };
-});
+  }
+})

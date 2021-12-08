@@ -13,24 +13,24 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { forwardRef, createContext, useContext } from "react";
+import { forwardRef, createContext, useContext } from "react"
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
+import MDBox from "components/MDBox"
 
 // Custom styles for MDPagination
-import MDPaginationItemRoot from "components/MDPagination/MDPaginationItemRoot";
+import MDPaginationItemRoot from "components/MDPagination/MDPaginationItemRoot"
 
 // The Pagination main context
-const Context = createContext();
+const Context = createContext()
 
 const MDPagination = forwardRef(
   ({ item, variant, color, size, active, children, ...rest }, ref) => {
-    const context = item ? useContext(Context) : null;
-    const paginationSize = context ? context.size : null;
+    const context = item ? useContext(Context) : null
+    const paginationSize = context ? context.size : null
 
     return (
       <Context.Provider value={{ variant, color, size }}>
@@ -57,9 +57,9 @@ const MDPagination = forwardRef(
           </MDBox>
         )}
       </Context.Provider>
-    );
+    )
   }
-);
+)
 
 // Setting default values for the props of MDPagination
 MDPagination.defaultProps = {
@@ -68,7 +68,7 @@ MDPagination.defaultProps = {
   color: "info",
   size: "medium",
   active: false,
-};
+}
 
 // Typechecking props for the MDPagination
 MDPagination.propTypes = {
@@ -88,6 +88,6 @@ MDPagination.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   active: PropTypes.bool,
   children: PropTypes.node.isRequired,
-};
+}
 
-export default MDPagination;
+export default MDPagination

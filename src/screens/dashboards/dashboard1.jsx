@@ -1,28 +1,28 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { logout } from '../../actions/userActions';
-import { useDispatch, useSelector } from 'react-redux';
-import './dashboard.css';
-import CreateUser from '../Components/CreateUser';
-import { listUsers } from '../../actions/userActions';
-import UserList from '../Components/userList';
+import React, { useCallback, useEffect, useState } from "react"
+import { logout } from "../../actions/userActions"
+import { useDispatch, useSelector } from "react-redux"
+import "./dashboard.css"
+import CreateUser from "../Components/CreateUser"
+import { listUsers } from "../../actions/userActions"
+import UserList from "../Components/userList"
 
 const Dashboard1 = () => {
-  const userLogin = useSelector((state) => state.userLogin);
-  const allUser = useSelector((state) => state.userList);
-  const { users, loading, error } = allUser;
-  const { userInfo } = userLogin;
-  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin)
+  const allUser = useSelector((state) => state.userList)
+  const { users, loading, error } = allUser
+  const { userInfo } = userLogin
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(listUsers());
-  }, []);
+    dispatch(listUsers())
+  }, [])
 
-  const [addUserFlag, setAddUserFlag] = useState(false);
+  const [addUserFlag, setAddUserFlag] = useState(false)
   function addUserHandler() {
-    setAddUserFlag(true);
+    setAddUserFlag(true)
   }
   const cancelHandeler = useCallback(() => {
-    setAddUserFlag(false);
-  });
+    setAddUserFlag(false)
+  })
 
   return (
     <div className="dashboard-container">
@@ -35,7 +35,7 @@ const Dashboard1 = () => {
           <button
             className="add-user"
             onClick={() => {
-              addUserHandler();
+              addUserHandler()
             }}
           >
             Add User
@@ -43,23 +43,17 @@ const Dashboard1 = () => {
           <button
             className="logout-button"
             onClick={() => {
-              dispatch(logout());
+              dispatch(logout())
             }}
           >
             Logout
           </button>
         </div>
       </div>
-      {loading ? (
-        <h1>Loading</h1>
-      ) : error ? (
-        <h1>{error}</h1>
-      ) : (
-        <UserList users={users} />
-      )}
+      {loading ? <h1>Loading</h1> : error ? <h1>{error}</h1> : <UserList users={users} />}
       {addUserFlag && <CreateUser cancelHandeler={cancelHandeler} />}
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard1;
+export default Dashboard1

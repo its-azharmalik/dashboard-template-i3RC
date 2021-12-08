@@ -25,22 +25,22 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_RESET,
   USER_UPDATE_SUCCESS,
-} from '../constants/userConstants';
+} from "../constants/userConstants"
 
 export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
-      return { loading: true };
+      return { loading: true }
     case USER_LOGIN_SUCCESS:
-      return { loading: false, userInfo: action.payload };
+      return { loading: false, userInfo: action.payload }
     case USER_LOGIN_FAIL:
-      return { loading: false, error: action.payload };
+      return { loading: false, error: action.payload }
     case USER_LOGOUT:
-      return {};
+      return {}
     default:
-      return state;
+      return state
   }
-};
+}
 
 export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {

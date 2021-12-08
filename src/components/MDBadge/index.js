@@ -13,13 +13,13 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { forwardRef } from "react";
+import { forwardRef } from "react"
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // Custom styles for the MDBadge
-import MDBadgeRoot from "components/MDBadge/MDBadgeRoot";
+import MDBadgeRoot from "components/MDBadge/MDBadgeRoot"
 
 const MDBadge = forwardRef(
   ({ color, variant, size, circular, indicator, border, container, children, ...rest }, ref) => (
@@ -32,7 +32,7 @@ const MDBadge = forwardRef(
       {children}
     </MDBadgeRoot>
   )
-);
+)
 
 // Setting default values for the props of MDBadge
 MDBadge.defaultProps = {
@@ -44,7 +44,7 @@ MDBadge.defaultProps = {
   border: false,
   children: false,
   container: false,
-};
+}
 
 // Typechecking props of the MDBadge
 MDBadge.propTypes = {
@@ -65,6 +65,6 @@ MDBadge.propTypes = {
   border: PropTypes.bool,
   children: PropTypes.node,
   container: PropTypes.bool,
-};
+}
 
-export default MDBadge;
+export default MDBadge

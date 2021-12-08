@@ -14,17 +14,17 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography"
+import { styled } from "@mui/material/styles"
 
 export default styled(Typography)(({ theme, ownerState }) => {
-  const { palette, typography, functions } = theme;
+  const { palette, typography, functions } = theme
   const { color, textTransform, verticalAlign, fontWeight, opacity, textGradient, darkMode } =
-    ownerState;
+    ownerState
 
-  const { gradients, transparent, white } = palette;
-  const { fontWeightLight, fontWeightRegular, fontWeightMedium, fontWeightBold } = typography;
-  const { linearGradient } = functions;
+  const { gradients, transparent, white } = palette
+  const { fontWeightLight, fontWeightRegular, fontWeightMedium, fontWeightBold } = typography
+  const { linearGradient } = functions
 
   // fontWeight styles
   const fontWeights = {
@@ -32,7 +32,7 @@ export default styled(Typography)(({ theme, ownerState }) => {
     regular: fontWeightRegular,
     medium: fontWeightMedium,
     bold: fontWeightBold,
-  };
+  }
 
   // styles for the typography with textGradient={true}
   const gradientStyles = () => ({
@@ -45,14 +45,14 @@ export default styled(Typography)(({ theme, ownerState }) => {
     WebkitTextFillColor: transparent.main,
     position: "relative",
     zIndex: 1,
-  });
+  })
 
   // color value
-  let colorValue = color === "inherit" || !palette[color] ? "inherit" : palette[color].main;
+  let colorValue = color === "inherit" || !palette[color] ? "inherit" : palette[color].main
 
   if (darkMode && (color === "inherit" || !palette[color])) {
-    colorValue = "inherit";
-  } else if (darkMode && color === "dark") colorValue = white.main;
+    colorValue = "inherit"
+  } else if (darkMode && color === "dark") colorValue = white.main
 
   return {
     opacity,
@@ -62,5 +62,5 @@ export default styled(Typography)(({ theme, ownerState }) => {
     color: colorValue,
     fontWeight: fontWeights[fontWeight] && fontWeights[fontWeight],
     ...(textGradient && gradientStyles()),
-  };
-});
+  }
+})

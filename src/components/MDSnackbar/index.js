@@ -14,45 +14,45 @@ Coded by www.creative-tim.com
 */
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @mui material components
-import Snackbar from "@mui/material/Snackbar";
-import IconButton from "@mui/material/IconButton";
-import Icon from "@mui/material/Icon";
-import Divider from "@mui/material/Divider";
-import Fade from "@mui/material/Fade";
+import Snackbar from "@mui/material/Snackbar"
+import IconButton from "@mui/material/IconButton"
+import Icon from "@mui/material/Icon"
+import Divider from "@mui/material/Divider"
+import Fade from "@mui/material/Fade"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from "components/MDBox"
+import MDTypography from "components/MDTypography"
 
 // Custom styles for the MDSnackbar
-import MDSnackbarIconRoot from "components/MDSnackbar/MDSnackbarIconRoot";
+import MDSnackbarIconRoot from "components/MDSnackbar/MDSnackbarIconRoot"
 
 // Material Dashboard 2 PRO React context
-import { useMaterialUIController } from "context";
+import { useMaterialUIController } from "context"
 
 function MDSnackbar({ color, icon, title, dateTime, content, close, bgWhite, ...rest }) {
-  const [controller] = useMaterialUIController();
-  const { darkMode } = controller;
+  const [controller] = useMaterialUIController()
+  const { darkMode } = controller
 
-  let titleColor;
-  let dateTimeColor;
-  let dividerColor;
+  let titleColor
+  let dateTimeColor
+  let dividerColor
 
   if (bgWhite) {
-    titleColor = color;
-    dateTimeColor = "dark";
-    dividerColor = false;
+    titleColor = color
+    dateTimeColor = "dark"
+    dividerColor = false
   } else if (color === "light") {
-    titleColor = darkMode ? "inherit" : "dark";
-    dateTimeColor = darkMode ? "inherit" : "text";
-    dividerColor = false;
+    titleColor = darkMode ? "inherit" : "dark"
+    dateTimeColor = darkMode ? "inherit" : "text"
+    dividerColor = false
   } else {
-    titleColor = "white";
-    dateTimeColor = "white";
-    dividerColor = true;
+    titleColor = "white"
+    dateTimeColor = "white"
+    dividerColor = true
   }
 
   return (
@@ -128,13 +128,13 @@ function MDSnackbar({ color, icon, title, dateTime, content, close, bgWhite, ...
           sx={{
             fontSize: ({ typography: { size } }) => size.sm,
             color: ({ palette: { white, text } }) => {
-              let colorValue = bgWhite || color === "light" ? text.main : white.main;
+              let colorValue = bgWhite || color === "light" ? text.main : white.main
 
               if (darkMode) {
-                colorValue = color === "light" ? "inherit" : white.main;
+                colorValue = color === "light" ? "inherit" : white.main
               }
 
-              return colorValue;
+              return colorValue
             },
           }}
         >
@@ -142,14 +142,14 @@ function MDSnackbar({ color, icon, title, dateTime, content, close, bgWhite, ...
         </MDBox>
       </MDBox>
     </Snackbar>
-  );
+  )
 }
 
 // Setting default values for the props of MDSnackbar
 MDSnackbar.defaultProps = {
   bgWhite: false,
   color: "info",
-};
+}
 
 // Typechecking props for MDSnackbar
 MDSnackbar.propTypes = {
@@ -169,6 +169,6 @@ MDSnackbar.propTypes = {
   content: PropTypes.node.isRequired,
   close: PropTypes.func.isRequired,
   bgWhite: PropTypes.bool,
-};
+}
 
-export default MDSnackbar;
+export default MDSnackbar

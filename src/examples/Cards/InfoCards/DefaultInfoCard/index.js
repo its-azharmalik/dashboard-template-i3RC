@@ -14,16 +14,16 @@ Coded by www.creative-tim.com
 */
 
 // prop-types is library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Divider from "@mui/material/Divider";
-import Icon from "@mui/material/Icon";
+import Card from "@mui/material/Card"
+import Divider from "@mui/material/Divider"
+import Icon from "@mui/material/Icon"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from "components/MDBox"
+import MDTypography from "components/MDTypography"
 
 function DefaultInfoCard({ color, icon, title, description, value }) {
   return (
@@ -61,7 +61,7 @@ function DefaultInfoCard({ color, icon, title, description, value }) {
         )}
       </MDBox>
     </Card>
-  );
+  )
 }
 
 // Setting default values for the props of DefaultInfoCard
@@ -69,7 +69,7 @@ DefaultInfoCard.defaultProps = {
   color: "info",
   value: "",
   description: "",
-};
+}
 
 // Typechecking props for the DefaultInfoCard
 DefaultInfoCard.propTypes = {
@@ -78,6 +78,6 @@ DefaultInfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
+}
 
-export default DefaultInfoCard;
+export default DefaultInfoCard

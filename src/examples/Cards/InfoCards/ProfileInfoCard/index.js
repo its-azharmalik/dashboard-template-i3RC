@@ -14,45 +14,45 @@ Coded by www.creative-tim.com
 */
 
 // react-routers components
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 // prop-types is library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Divider from "@mui/material/Divider";
-import Tooltip from "@mui/material/Tooltip";
-import Icon from "@mui/material/Icon";
+import Card from "@mui/material/Card"
+import Divider from "@mui/material/Divider"
+import Tooltip from "@mui/material/Tooltip"
+import Icon from "@mui/material/Icon"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from "components/MDBox"
+import MDTypography from "components/MDTypography"
 
 // Material Dashboard 2 PRO React base styles
-import colors from "assets/theme/base/colors";
-import typography from "assets/theme/base/typography";
+import colors from "assets/theme/base/colors"
+import typography from "assets/theme/base/typography"
 
 function ProfileInfoCard({ title, description, info, social, action, shadow }) {
-  const labels = [];
-  const values = [];
-  const { socialMediaColors } = colors;
-  const { size } = typography;
+  const labels = []
+  const values = []
+  const { socialMediaColors } = colors
+  const { size } = typography
 
   // Convert this form `objectKey` of the object key in to this `object key`
   Object.keys(info).forEach((el) => {
     if (el.match(/[A-Z\s]+/)) {
-      const uppercaseLetter = Array.from(el).find((i) => i.match(/[A-Z]+/));
-      const newElement = el.replace(uppercaseLetter, ` ${uppercaseLetter.toLowerCase()}`);
+      const uppercaseLetter = Array.from(el).find((i) => i.match(/[A-Z]+/))
+      const newElement = el.replace(uppercaseLetter, ` ${uppercaseLetter.toLowerCase()}`)
 
-      labels.push(newElement);
+      labels.push(newElement)
     } else {
-      labels.push(el);
+      labels.push(el)
     }
-  });
+  })
 
   // Push the object values into the values array
-  Object.values(info).forEach((el) => values.push(el));
+  Object.values(info).forEach((el) => values.push(el))
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
@@ -64,7 +64,7 @@ function ProfileInfoCard({ title, description, info, social, action, shadow }) {
         &nbsp;{values[key]}
       </MDTypography>
     </MDBox>
-  ));
+  ))
 
   // Render the card social media icons
   const renderSocial = social.map(({ link, icon, color }) => (
@@ -82,7 +82,7 @@ function ProfileInfoCard({ title, description, info, social, action, shadow }) {
     >
       {icon}
     </MDBox>
-  ));
+  ))
 
   return (
     <Card sx={{ height: "100%", boxShadow: !shadow && "none" }}>
@@ -116,13 +116,13 @@ function ProfileInfoCard({ title, description, info, social, action, shadow }) {
         </MDBox>
       </MDBox>
     </Card>
-  );
+  )
 }
 
 // Setting default props for the ProfileInfoCard
 ProfileInfoCard.defaultProps = {
   shadow: true,
-};
+}
 
 // Typechecking props for the ProfileInfoCard
 ProfileInfoCard.propTypes = {
@@ -135,6 +135,6 @@ ProfileInfoCard.propTypes = {
     tooltip: PropTypes.string.isRequired,
   }).isRequired,
   shadow: PropTypes.bool,
-};
+}
 
-export default ProfileInfoCard;
+export default ProfileInfoCard
